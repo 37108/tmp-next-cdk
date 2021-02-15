@@ -1,0 +1,8 @@
+  {
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+      // only run command by "ts-node"
+      "noEmit": true
+    },
+    "exclude": ["cdk.out"]
+  }

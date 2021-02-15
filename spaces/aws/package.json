@@ -1,0 +1,21 @@
+{
+  "name": "aws",
+  "version": "0.1.0",
+  "bin": {
+    "aws": "bin/index.ts"
+  },
+  "scripts": {
+    "deploy": "cdk deploy",
+    "synth": "cdk synth",
+    "diff": "cdk diff"
+  },
+  "devDependencies": {
+    "@aws-cdk/assert": "v1.89.0",
+    "@aws-cdk/aws-cloudfront": "v1.89.0",
+    "@aws-cdk/aws-cloudfront-origins": "v1.89.0",
+    "@aws-cdk/aws-lambda": "v1.89.0",
+    "@aws-cdk/aws-s3": "v1.89.0",
+    "@aws-cdk/core": "v1.89.0",
+    "aws-cdk": "v1.89.0"
+  }
+}

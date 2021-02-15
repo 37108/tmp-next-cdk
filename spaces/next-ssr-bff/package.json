@@ -1,0 +1,35 @@
+{
+  "name": "next-ssr-bff",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "scan": "yarn check:prettier && yarn check:eslint && yarn check:type",
+    "fix": "yarn fix:prettier && yarn fix:eslint",
+    "build": "yarn build:clean && yarn build:synth && yarn build:layer && yarn build:code",
+    "deploy": "yarn deploy:static",
+    "build:clean": "rm -rf dist/",
+    "build:synth": "mkdir -p dist && yarn workspace next-ssr-front build && cp -r ../next-ssr-front/.next dist/.next",
+    "build:layer": "mkdir -p dist && cp package.json dist && yarn --cwd dist --production install",
+    "build:code": "tsc",
+    "deploy:static": "aws s3 rm --recursive s3://<BUCKET_NAME> && aws s3 sync 'dist/.next' s3://<BUCKET_NAME>",
+    "scan:type": "tsc -p . --noEmit",
+    "scan:prettier": "yarn prettier \"./src\" --write",
+    "scan:eslint": "eslint \".\"",
+    "fix:prettier": "yarn prettier \"./src\" --write",
+    "fix:eslint": "eslint \".\" --fix"
+  },
+  "dependencies": {
+    "@vendia/serverless-express": "^4.3.0",
+    "express": "^4.17.1",
+    "contentful": "^7.14.8",
+    "marked": "^1.2.2",
+    "prismjs": "^1.22.0",
+    "next": "10.0.6",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/node": "^14.14.6"
+  }
+}

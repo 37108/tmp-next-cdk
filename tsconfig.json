@@ -1,0 +1,33 @@
+// make sure set below items. any other settings are required if you need.
+// {
+//   "extends": "../../tsconfig.json",
+//   "compilerOptions": {
+//     "rootDir": "",
+//     "outDir": ""
+//   }
+// }
+// make sure set below items if you develope frontend
+// - "lib": "lib": ["dom", "dom.iterable"],
+// - "jsx": "preserve"
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "commonjs",
+    "lib": ["esnext"],
+    "noEmit": false,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "strict": true,
+    "strictNullChecks": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": false,
+    "declaration": false,
+    "allowJs": false,
+    "skipLibCheck": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+  },
+  "exclude": ["dist", "node_modules", "tests"]
+}
