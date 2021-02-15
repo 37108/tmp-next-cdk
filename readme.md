@@ -1,5 +1,6 @@
 ## pre requirement
 - replace next-ssr-front (recommend) or add .env.local file.
+  - make sure add dependencies on both of next-ssr-bff and next-ssr-front
 - region **must** be us-east-1 or rewrite Lambda Function as [cloudfront.experimental.EdgeFunction](https://docs.aws.amazon.com/cdk/api/latest/docs/aws-cloudfront-readme.html#lambdaedge)
 
 ## build
