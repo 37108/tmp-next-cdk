@@ -17,3 +17,18 @@ $ yarn workspace aws deploy
 # replace <BUCKET_NAME> on `spaces/next-ssr-bff/package.json` as real one
 $ yarn workspace next-ssr-bff deploy:static
 ```
+
+## development
+use `next dev` for development.  
+if you want to see server's behavior, overwrite `/spaces/next-ssr-bff/src/index.ts` and run this file.
+
+```typescript
+// ...
+const server = build();
+server.listen(3000, () => {console.log('running')});
+```
+
+```bash
+$ yarn workspace next-ssr-bff build
+$ yarn ts-node spaces/next-ssr-bff/src/index.ts
+```
